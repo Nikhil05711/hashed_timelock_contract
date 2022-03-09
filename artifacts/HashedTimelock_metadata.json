@@ -1,0 +1,279 @@
+{
+	"compiler": {
+		"version": "0.8.12+commit.f00d7308"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "bytes32",
+						"name": "contractId",
+						"type": "bytes32"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "sender",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "receiver",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "bytes32",
+						"name": "hashlock",
+						"type": "bytes32"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "timelock",
+						"type": "uint256"
+					}
+				],
+				"name": "LogHTLCNew",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "bytes32",
+						"name": "contractId",
+						"type": "bytes32"
+					}
+				],
+				"name": "LogHTLCRefund",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "bytes32",
+						"name": "contractId",
+						"type": "bytes32"
+					}
+				],
+				"name": "LogHTLCWithdraw",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes32",
+						"name": "_contractId",
+						"type": "bytes32"
+					}
+				],
+				"name": "exists",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "exist",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes32",
+						"name": "_x",
+						"type": "bytes32"
+					}
+				],
+				"name": "func",
+				"outputs": [
+					{
+						"internalType": "bytes32",
+						"name": "",
+						"type": "bytes32"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes32",
+						"name": "_contractId",
+						"type": "bytes32"
+					}
+				],
+				"name": "getContract",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "sender",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "receiver",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "hashlock",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "uint256",
+						"name": "timelock",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bool",
+						"name": "withdrawn",
+						"type": "bool"
+					},
+					{
+						"internalType": "bool",
+						"name": "refunded",
+						"type": "bool"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "preimage",
+						"type": "bytes32"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address payable",
+						"name": "_receiver",
+						"type": "address"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "_hashlock",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_timelock",
+						"type": "uint256"
+					}
+				],
+				"name": "newDeal",
+				"outputs": [
+					{
+						"internalType": "bytes32",
+						"name": "contractId",
+						"type": "bytes32"
+					}
+				],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes32",
+						"name": "_contractId",
+						"type": "bytes32"
+					}
+				],
+				"name": "refund",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes32",
+						"name": "_contractId",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "_preimage",
+						"type": "bytes32"
+					}
+				],
+				"name": "withdraw",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"Hash Timelock contract/smartContract.sol": "HashedTimelock"
+		},
+		"evmVersion": "london",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"Hash Timelock contract/smartContract.sol": {
+			"keccak256": "0x2f9119fd6fa7e12f8f6baec50e80c7d09578ea6c9772ae8b77d0f2e95a2ef7be",
+			"license": "UNLICENSED",
+			"urls": [
+				"bzz-raw://68452713a7418267085aa3e534f21f0b0c04f06f4f3b3c32ebdc6a46ee983504",
+				"dweb:/ipfs/QmUptG4LFoDC2NijtxypooYnhupoXKV9i5TjBXFvZC9xau"
+			]
+		}
+	},
+	"version": 1
+}
